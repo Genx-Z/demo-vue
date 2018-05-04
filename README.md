@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+![avatar](http://baidu.com/pic/doge.png)
+
 ## Build Setup
 
 ``` bash
