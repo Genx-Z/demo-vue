@@ -22,40 +22,30 @@ export default {
     },
     methods: {
         blurForm() {
-            /*
-            var name = this.name;
-            var age = this.age;
-            for (var i = 0; i < this.dataList.length; i++) {
-                if (
-                    this.dataList[i].name == name &&
-                    this.dataList[i].age == age
-                ) {
-                    console.log("数据已存在！");
-                }
-            }
-            */
-            this.$emit("chuanzhi", {name:this.name,age:this.age});
-            //this.$router.push("/page1");
+            // //联合判断
+            // var name = this.name;
+            // var age = this.age;
+            // for (var i = 0; i < this.dataList.length; i++) {
+            //     if (
+            //         this.dataList[i].name == name &&
+            //         this.dataList[i].age == age
+            //     ) {
+            //         console.log("数据已存在！");
+            //     }
+            // }
+
+            // //组件间传值
+            //this.$emit("chuanzhi", {name:this.name,age:this.age});
+
+            //使用vuex存值
+            this.$store.commit("setInfo",{name:this.name,age:this.age});
         }
+    },
+    mounted(){
+      
     }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-    font-weight: normal;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
-}
 </style>

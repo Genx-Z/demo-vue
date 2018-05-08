@@ -2,29 +2,35 @@
 <div>
     <p v-text="names"></p>
     <input type="text" v-model="ages">
-    <hello-page v-on:chuanzhi="jieshou($event)"></hello-page>
+    <hello-page></hello-page>
 </div>
 </template>
 <script>
 import helloPage from './HelloWorld';
+import { mapGetters } from 'vuex';
+
 export default {
+  computed:mapGetters({
+            names:"getInfoName",
+            ages:"getInfoAge"
+        }),
   data(){
       return{
           num:"111111",
-          names:"11",
-          ages:"22",
       }
   },
   components:{
       helloPage,
   },
   methods:{
+    /*
       jieshou(msg){
           this.names = msg.name;
           this.ages = msg.age;
           //console.log(msg);
           //this.num = msg;
       }
+      */
   },
   mounted(){
   } 

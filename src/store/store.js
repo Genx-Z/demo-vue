@@ -6,28 +6,32 @@ Vue.use(Vuex)
 const store =  new Vuex.Store({
     form: {
         selToolName: '',
-        selmobile:'',
     },
-    //还可以定义
+   
     info:{
-        name:'',
-        sex:''
+        name:"",
+        age:""
     },
     mutations: {
         "SET_FORM": function(form, toolName) {
             form.selToolName = toolName;
         },
-        "SET_INFO": function(info, username) {
-            info.name = username;
-        },
+        setInfo(info,msg){
+            info.name = msg.name;
+            info.age = msg.age;
+            console.log(info.name + "---" + info.age);
+        }
     },
     getters: {
         "GET_FORM": function(form) {
             return form.selToolName;
         },
-        "GET_INFO": function(info) {
+        getInfoName(info){
             return info.name;
         },
+        getInfoAge(info){
+            return info.age;
+        }
     },
     //异步
     actions: {
